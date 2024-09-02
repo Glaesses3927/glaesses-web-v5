@@ -1,0 +1,18 @@
+services:
+  web:
+    container_name: svelte
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 5173:5173
+    volumes:
+      - type: bind
+        source: ./
+        target: /web/
+      - type: volume
+        source: dummy
+        target: /web/node_modules
+    command: npm run dev -- --host
+volumes:
+  dummy:
