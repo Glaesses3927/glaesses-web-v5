@@ -5,14 +5,7 @@
 </script>
 
 <Header />
-<main>
+<main class="bg-gray-100">
   <slot />
 </main>
 <Footer />
-
-
-<style>
-  main {
-    margin-top: 72px;
-  }
-</style>
