@@ -8,16 +8,16 @@
   }
 </script>
 
-<header class="flex p-3 pr-8 sm:pr-12 bg-white absolute top-0 w-full z-20 shadow">
+<header class="flex p-3 pr-8 sm:pr-12 bg-white fixed top-0 w-full h-[72px] z-20 shadow">
   <div class="flex items-center">
     <img src={logo} class="h-10 w-10" alt="logo">
     <h1 class="text-lg leading-none">GlaessesWeb</h1>
   </div>
   <ul class="max-[640px]:hidden flex ml-auto">
-    <li class="flex sm:my-auto sm:ml-6 text-gray-900 rounded hover:bg-gray-100">
+    <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
       <a class="p-2 w-full text-center" href="{base}/">Home</a>
     </li>
-    <li class="flex sm:my-auto sm:ml-6 text-gray-900 rounded hover:bg-gray-100">
+    <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
       <a class="p-2 w-full text-center" href="{base}/webapps">WebApps</a>
     </li>
   </ul>
@@ -30,8 +30,8 @@
 
 {#if openMenu}
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-<div on:click={() => controlMenu(false)} class="absolute top-0 left-0 w-screen h-screen bg-[rgb(0,0,0,0.5)] z-10"></div>
-<ul class="absolute right-0 inset-y-0 flex flex-col gap-2 p-4 pt-28 w-4/5 bg-gray-50 z-10 text-xl font-semibold">
+<div on:click={() => controlMenu(false)} class="fixed top-0 left-0 w-screen h-screen bg-[rgb(0,0,0,0.5)] z-10"></div>
+<ul class="fixed right-0 inset-y-0 flex flex-col gap-2 p-4 pt-28 w-4/5 bg-gray-50 z-10 text-xl font-semibold">
   <li class="flex text-gray-900 rounded hover:bg-gray-100">
     <a class="p-2 pl-6 w-full" on:click={() => controlMenu(false)} href="{base}/">Home</a>
   </li>
