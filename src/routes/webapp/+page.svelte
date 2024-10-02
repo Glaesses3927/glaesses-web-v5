@@ -8,7 +8,7 @@
     <div class="absolute top-0 left-0 w-full h-40 bg-[rgb(0,0,0,0.5)]"></div>
   </div>
   <div class="relative pt-24 pl-4 min-[900px]:pl-20 text-white">
-    <h2 class="font-bold text-4xl min-[900px]:text-4xl leading-tight mb-16">WebApps</h2>
+    <h2 class="font-bold text-4xl min-[900px]:text-4xl leading-tight mb-16">WebApp</h2>
   </div>
 </section>
 
