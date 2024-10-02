@@ -14,13 +14,13 @@
 
 <section class="max-w-[900px] p-8 mx-auto flex flex-col justify-center items-center">
   <div class="grid min-[900px]:grid-cols-1 gap-6">
-    <div class="flex flex-col border-2 border-gray-300 rounded-xl p-6">
+    <div class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow">
       <h3 class="font-bold">
         <div class="text-lg">BucketBox</div>
       </h3>
       <p class="text-gray-800">死ぬまでにやりたいことリストを作成・管理するアプリです。</p>
-      <p>仕様技術 : React, Redux, TailwindCSS, Flowbite, Auth0, nodejs(Express)</p>
-      <a href="https://glaesses.net/webapps/bucketbox" class="flex items-center justify-center px-5 py-2 mx-4 my-2 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+      <p class="text-gray-500 text-xs">React, Redux, TailwindCSS, Flowbite, Auth0, nodejs(Express)</p>
+      <a href="https://glaesses.net/webapps/bucketbox" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         TRY IT!
         <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
