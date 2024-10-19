@@ -8,6 +8,8 @@
   import { PUBLIC_FORM_ACCESS_KEY } from '$env/static/public';
   import { onMount } from 'svelte';
   import quote from '$lib/quote.json';
+  import github from '$lib/github-icon.png';
+  import qiita from '$lib/qiita-icon.png';
   onMount(() => {
     const graphContainer = document.getElementById("graph-container");
     const options = {
@@ -174,6 +176,24 @@
   </div>
 </section>
 
+<section class="max-w-[900px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
+  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">URLs.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-green-300 opacity-60"/></h2>
+  <div class="flex flex-col gap-5 justify-center font-semibold">
+    <div class="bg-white hover:bg-gray-200 rounded-lg shadow-md">
+      <a href="https://github.com/Glaesses3927" class="px-6 py-2 flex flex-row items-center">
+        <img class="w-10 h-10 mr-4" src={github} alt="github-icon"/>
+        <div>GitHub: @Glaesses3927</div>
+      </a>
+    </div>
+    <div class="bg-white hover:bg-gray-200 rounded-lg shadow-md">
+      <a href="https://qiita.com/Glaesses" class="px-6 py-2 flex flex-row items-center">
+        <img class="w-10 h-10 mr-4" src={qiita} alt="qiita-icon"/>
+        <div>Qiita: @Glaesses</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="max-w-[600px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
   <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Contact.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-gray-300 opacity-60"/></h2>
   <form on:submit|preventDefault={handleSubmit} class="w-full">
@@ -199,14 +219,11 @@
     </div>
     <div>
       <label for="message" class="block mb-2 mt-6 text-sm font-medium text-gray-900">Your message</label>
-      <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave a comment..." disabled={disable} required></textarea>
+      <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Your message here..." disabled={disable} required></textarea>
     </div>
     {#if status=="waiting"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 flex">
       Send
-      <svg class="w-6 h-6 text-white ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
-      </svg>
     </button>
     {:else if status=="sending"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-gray-400 flex" disabled>
