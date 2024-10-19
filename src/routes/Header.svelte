@@ -1,5 +1,5 @@
 <script lang="ts">
-  import logo from '$lib/svelte-logo.svg';
+  import logo from '$lib/logo.png';
   import { base } from '$app/paths';
 
   let openMenu:Boolean = false;
@@ -11,7 +11,7 @@
 <header class="flex p-3 pr-8 sm:pr-12 bg-white fixed top-0 w-full h-[72px] z-20 shadow">
   <div class="flex items-center">
     <img src={logo} class="h-10 w-10" alt="logo">
-    <h1 class="text-lg leading-none">GlaessesWeb</h1>
+    <h1 class="text-lg leading-none ml-1">GlaessesWeb</h1>
   </div>
   <ul class="max-[640px]:hidden flex ml-auto">
     <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
