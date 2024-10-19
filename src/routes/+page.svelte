@@ -168,7 +168,7 @@
         <h3 class="font-bold relative">
           <div class="text-2xl mb-4">WebApp</div>
         </h3>
-        <p class="text-sm">現在1つのWebアプリケーションが作成されています。詳しくは右上のボタンから。</p>
+        <p class="text-sm">現在2つのWebアプリケーションが作成されています。詳しくは右上のボタンから。</p>
       </div>
     </div>
   </div>
