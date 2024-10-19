@@ -29,7 +29,7 @@
         <div class="text-lg">WorkHolic</div>
       </h3>
       <p class="text-gray-800">特定の形式のシフト表から合計勤務時間を計算するアプリです。</p>
-      <p class="text-gray-500 text-xs">Vue, Flowbite</p>
+      <p class="text-gray-500 text-xs">Vue, TailwindCSS, Flowbite</p>
       <a href="https://glaesses.net/webapps/workholic" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         TRY IT!
     </a>
