@@ -7,6 +7,7 @@
   import test from '$lib/works_001.png';
   import { PUBLIC_FORM_ACCESS_KEY } from '$env/static/public';
   import { onMount } from 'svelte';
+  import quote from '$lib/quote.json';
   onMount(() => {
     const graphContainer = document.getElementById("graph-container");
     const options = {
@@ -36,10 +37,13 @@
     jobs1.commit("Start being USJ crew (2022/11)");
     // school.merge({ branch: jobs1, commitOptions: {subject: " ",}});
     main.commit("2024/10").tag("now");
+
+    qitem = quote[Math.floor(Math.random()*quote.length)]
   });
 
   let status = "waiting";
   let disable = false;
+  let qitem = {"content": "Loading...", "name":"", "who":""};
   // @ts-ignore
   const handleSubmit = async data => {
     status = 'sending';
@@ -123,9 +127,15 @@
     </svg>
     <blockquote>
         <p class="text-lg lg:text-2xl italic font-medium text-gray-900">
-          "Loser be like a loser .... They find themselves inferior in every way to others and eventually lose sight of the value of their existence. Finding it is the purpose and meaning of life."
+          {qitem.content}
         </p>
     </blockquote>
+    <figcaption class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+      <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500">
+        <cite class="pe-3 font-medium text-gray-900">{qitem.name}</cite>
+        <cite class="ps-3 text-sm text-gray-500">{qitem.who}</cite>
+      </div>
+  </figcaption>
 </figure>
 </section>
 
