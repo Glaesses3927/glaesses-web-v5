@@ -8,7 +8,7 @@
   import { PUBLIC_FORM_ACCESS_KEY } from '$env/static/public';
   import { onMount } from 'svelte';
   import quote from '$lib/quote.json';
-  import github from '$lib/github-icon.png';
+  import github from '$lib/github-mark.png';
   import qiita from '$lib/qiita-icon.png';
   onMount(() => {
     const graphContainer = document.getElementById("graph-container");
