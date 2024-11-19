@@ -8,7 +8,7 @@
     <div class="absolute top-0 left-0 w-full h-40 bg-[rgb(0,0,0,0.5)]"></div>
   </div>
   <div class="relative pt-24 pl-4 min-[900px]:pl-20 text-white">
-    <h2 class="font-bold text-4xl min-[900px]:text-4xl leading-tight mb-16">WebApp</h2>
+    <h2 class="font-bold text-4xl min-[900px]:text-4xl leading-tight mb-16">WebApps</h2>
   </div>
 </section>
 
@@ -18,9 +18,9 @@
       <h3 class="font-bold">
         <div class="text-lg">BucketBox</div>
       </h3>
-      <p class="text-gray-800">死ぬまでにやりたいことリストを作成・管理するアプリです。</p>
+      <p class="text-gray-800 text-sm">死ぬまでにやりたいことリストを作成・管理するアプリです。</p>
       <p class="text-gray-500 text-xs">React, Redux, TailwindCSS, Flowbite, Auth0, nodejs(Express)</p>
-      <a href="https://glaesses.net/webapps/bucketbox" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+      <a href="https://glaesses.net/webapps/bucketbox" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         TRY IT!
     </a>
     </div>
@@ -28,9 +28,9 @@
       <h3 class="font-bold">
         <div class="text-lg">WorkHolic</div>
       </h3>
-      <p class="text-gray-800">特定の形式のシフト表から合計勤務時間を計算するアプリです。</p>
+      <p class="text-gray-800 text-sm">特定の形式のシフト表から合計勤務時間を計算するアプリです。</p>
       <p class="text-gray-500 text-xs">Vue, TailwindCSS, Flowbite</p>
-      <a href="https://glaesses.net/webapps/workholic" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+      <a href="https://glaesses.net/webapps/workholic" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         TRY IT!
     </a>
     </div>
@@ -38,9 +38,9 @@
       <h3 class="font-bold">
         <div class="text-lg">PassGame</div>
       </h3>
-      <p class="text-gray-800">決められたルールに従ってパスワードを設定するアプリです。neal.funのサブセット版です。</p>
+      <p class="text-gray-800 text-sm">決められたルールに従ってパスワードを設定するアプリです。neal.funのサブセット版です。</p>
       <p class="text-gray-500 text-xs">Svelte, TailwindCSS, Flowbite</p>
-      <a href="https://glaesses.net/webapps/passgame" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+      <a href="https://glaesses.net/webapps/passgame" class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700">
         TRY IT!
     </a>
     </div>

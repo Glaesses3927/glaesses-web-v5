@@ -11,14 +11,14 @@
 <header class="flex p-3 pr-8 sm:pr-12 bg-white fixed top-0 w-full h-[72px] z-20 shadow">
   <div class="flex items-center">
     <img src={logo} class="h-10 w-10" alt="logo">
-    <h1 class="text-lg leading-none ml-1">GlaessesWeb</h1>
+    <h1 class="text-xl font-bold leading-none ml-1">GlaessesWeb</h1>
   </div>
   <ul class="max-[640px]:hidden flex ml-auto">
     <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
       <a class="p-2 w-full text-center" href="{base}/">Home</a>
     </li>
     <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
-      <a class="p-2 w-full text-center" href="{base}/webapp">WebApp</a>
+      <a class="p-2 w-full text-center" href="{base}/webapps">WebApps</a>
     </li>
   </ul>
   <button type="button" on:click={() => controlMenu(!openMenu)} class="z-20 sm:hidden ml-auto my-auto inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
@@ -36,7 +36,7 @@
     <a class="p-2 pl-6 w-full" on:click={() => controlMenu(false)} href="{base}/">Home</a>
   </li>
   <li class="flex text-gray-900 rounded hover:bg-gray-100">
-    <a class="p-2 pl-6 w-full" on:click={() => controlMenu(false)} href="{base}/webapp">WebApp</a>
+    <a class="p-2 pl-6 w-full" on:click={() => controlMenu(false)} href="{base}/webapps">WebApps</a>
   </li>
   <li>
     <hr class="w-4/5 h-[2px] mx-auto my-4 bg-gray-200 border-0 rounded">

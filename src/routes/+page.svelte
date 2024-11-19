@@ -38,7 +38,8 @@
     jobs1.commit("Finish being USJ crew (2022/08)");
     jobs1.commit("Start being USJ crew (2022/11)");
     // school.merge({ branch: jobs1, commitOptions: {subject: " ",}});
-    main.commit("2024/10").tag("now");
+    const today = new Date().toLocaleDateString("ja-JP", {year:"numeric",month:"2-digit"})
+    main.commit(today).tag("now");
 
     qitem = quote[Math.floor(Math.random()*quote.length)]
   });
@@ -168,7 +169,7 @@
       </div>
       <div class="absolute inset-0 bg-[rgb(0,0,0,0.7)] opacity-0 text-white p-6 content-center transition rounded-xl">
         <h3 class="font-bold relative">
-          <div class="text-2xl mb-4">WebApp</div>
+          <div class="text-2xl mb-4">WebApps</div>
         </h3>
         <p class="text-sm">現在3つのWebアプリケーションが作成されています。詳しくは右上のボタンから。</p>
       </div>
