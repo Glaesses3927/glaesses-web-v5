@@ -1,7 +1,3 @@
-<svelte:head>
-  <script src="https://cdn.jsdelivr.net/npm/@gitgraph/js"></script>
-</svelte:head>
-
 <script>
   import bg from '$lib/image_city.png';
   import test from '$lib/works_001.png';
@@ -11,6 +7,8 @@
   import github from '$lib/github-mark.png';
   import qiita from '$lib/qiita-icon.png';
   onMount(() => {
+    qitem = quote[Math.floor(Math.random()*quote.length)];
+    
     const graphContainer = document.getElementById("graph-container");
     const options = {
       orientation: "vertical-reverse",
@@ -40,8 +38,6 @@
     // school.merge({ branch: jobs1, commitOptions: {subject: " ",}});
     const today = new Date().toLocaleDateString("ja-JP", {year:"numeric",month:"2-digit"})
     main.commit(today).tag("now");
-
-    qitem = quote[Math.floor(Math.random()*quote.length)]
   });
 
   let status = "waiting";
