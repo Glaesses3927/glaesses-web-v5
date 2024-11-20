@@ -1,9 +1,21 @@
 [{
   "content": "Supercalifragilisticexpialidocious",
   "name": "Mary Poppins",
-  "who": "Disney"
+  "who": "Mary Poppins"
 },{
-  "content": "Loser be like a loser .... They find themselves inferior in every way to others and eventually lose sight of the value of their existence. Finding it is the purpose and meaning of life.",
-  "name": "Someone",
-  "who": "Teacher"
+  "content": "Keep moving forward.",
+  "name": "Lewis Robinson/Cornelius",
+  "who": "Meet the Robinsons"
+},{
+  "content": "Hakuna matata",
+  "name": "The Lion King",
+  "who": "The Lion King"
+},{
+  "content": "Every wish deserves a dream.",
+  "name": "Believe! Sea of Dreams",
+  "who": "DisneySea"
+},{
+  "content": "A man's station is limited only by his imagination.",
+  "name": "Jenny Lind",
+  "who": "The Greatest Showman"
 }]
