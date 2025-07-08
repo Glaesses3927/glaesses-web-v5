@@ -24,10 +24,7 @@ const config = {
 			fallback: undefined,
 			precompress: false,
 			strict: true
-		}),
-		paths: {
-			base: "/home"
-		}
+		})
 	}
 };
 
