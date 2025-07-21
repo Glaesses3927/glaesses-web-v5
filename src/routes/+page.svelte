@@ -61,7 +61,6 @@
     });
     const result = await response.json();
     if (result.success) {
-        console.log(result);
         status = "success";
     }
   }
@@ -195,7 +194,7 @@
   <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Contact.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-gray-300 opacity-60"></div></h2>
   <form onsubmit={(event) => {
       event.preventDefault();
-      handleSubmit();
+      handleSubmit(event);
     }} class="w-full">
     <input type="hidden" name="access_key" value={PUBLIC_FORM_ACCESS_KEY}>
     <label for="name-icon" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
