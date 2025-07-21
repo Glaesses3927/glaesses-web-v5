@@ -6,6 +6,7 @@
   import quote from '$lib/quote.json';
   import github from '$lib/github-mark.png';
   import qiita from '$lib/qiita-icon.png';
+  
   onMount(() => {
     qitem = quote[Math.floor(Math.random()*quote.length)];
     
@@ -40,9 +41,9 @@
     main.commit(today).tag("now");
   });
 
-  let status = "waiting";
-  let disable = false;
-  let qitem = {"content": "Loading...", "name":"", "who":""};
+  let status = $state("waiting");
+  let disable = $state(false);
+  let qitem = $state({"content": "Loading...", "name":"", "who":""});
   // @ts-ignore
   const handleSubmit = async data => {
     status = 'sending';
@@ -141,12 +142,12 @@
 <hr class="w-56 h-1 mx-auto my-4 bg-gray-200 border-0 rounded md:my-10">
 
 <section class="max-w-[500px] p-8 mx-auto flex flex-col justify-center items-center">
-  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">History.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-red-300 opacity-60"/></h2>
+  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">History.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-red-300 opacity-60"></div></h2>
   <div id="graph-container"></div>
 </section>
 
 <section class="max-w-[900px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
-  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Portfolio.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-blue-300 opacity-60"/></h2>
+  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Portfolio.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-blue-300 opacity-60"></div></h2>
   <div class="flex flex-wrap gap-5 justify-center">
     <div class="works flex flex-col shadow w-[320px] h-[180px] relative rounded-xl">
       <img src={test} alt="works" class="rounded-xl"/>
@@ -174,7 +175,7 @@
 </section>
 
 <section class="max-w-[900px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
-  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">URLs.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-green-300 opacity-60"/></h2>
+  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">URLs.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-green-300 opacity-60"></div></h2>
   <div class="flex flex-col gap-5 justify-center font-semibold">
     <div class="bg-white hover:bg-gray-200 rounded-lg shadow-md">
       <a href="https://github.com/Glaesses3927" class="px-6 py-2 flex flex-row items-center">
@@ -192,8 +193,12 @@
 </section>
 
 <section class="max-w-[600px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
-  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Contact.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-gray-300 opacity-60"/></h2>
-  <form on:submit|preventDefault={handleSubmit} class="w-full">
+  <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Contact.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-gray-300 opacity-60"></div></h2>
+  <form onsubmit={(event) => {
+      event.preventDefault();
+      handleSubmit();
+    }}
+    class="w-full">
     <input type="hidden" name="access_key" value={PUBLIC_FORM_ACCESS_KEY}>
     <label for="name-icon" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
     <div class="relative">
