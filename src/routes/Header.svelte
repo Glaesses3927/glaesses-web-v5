@@ -1,6 +1,5 @@
 <script lang="ts">
   import logo from '$lib/logo.png';
-  import { base } from '$app/paths';
 
   let openMenu:Boolean = $state(false);
   function controlMenu(next:Boolean) {
@@ -15,10 +14,10 @@
   </div>
   <ul class="max-[640px]:hidden flex ml-auto">
     <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
-      <a class="p-2 w-full text-center" href="{base}/">Home</a>
+      <a class="p-2 w-full text-center" href="https://glaesses.net/">Home</a>
     </li>
     <li class="flex my-auto ml-6 text-gray-900 rounded hover:bg-gray-100">
-      <a class="p-2 w-full text-center" href="{base}/webapps">WebApps</a>
+      <a class="p-2 w-full text-center" href="https://glaesses.net/webapps">WebApps</a>
     </li>
   </ul>
   <!-- svelte-ignore a11y_consider_explicit_label -->
@@ -34,10 +33,10 @@
 <div onclick={() => controlMenu(false)} class="fixed top-0 left-0 w-screen h-screen bg-[rgb(0,0,0,0.5)] z-10"></div>
 <ul class="fixed right-0 inset-y-0 flex flex-col gap-2 p-4 pt-28 w-4/5 bg-gray-50 z-10 text-xl font-semibold">
   <li class="flex text-gray-900 rounded hover:bg-gray-100">
-    <a class="p-2 pl-6 w-full" onclick={() => controlMenu(false)} href="{base}/">Home</a>
+    <a class="p-2 pl-6 w-full" onclick={() => controlMenu(false)} href="https://glaesses.net/">Home</a>
   </li>
   <li class="flex text-gray-900 rounded hover:bg-gray-100">
-    <a class="p-2 pl-6 w-full" onclick={() => controlMenu(false)} href="{base}/webapps">WebApps</a>
+    <a class="p-2 pl-6 w-full" onclick={() => controlMenu(false)} href="https://glaesses.net/webapps">WebApps</a>
   </li>
   <li>
     <hr class="w-4/5 h-[2px] mx-auto my-4 bg-gray-200 border-0 rounded">
