@@ -1,11 +1,12 @@
 <script>
   import bg from '$lib/image_city.png';
   import test from '$lib/works_001.png';
-  import { PUBLIC_FORM_ACCESS_KEY } from '$env/static/public';
   import { onMount } from 'svelte';
   import quote from '$lib/quote.json';
   import github from '$lib/github-mark.png';
   import qiita from '$lib/qiita-icon.png';
+  import { enhance } from '$app/forms';
+
   onMount(() => {
     qitem = quote[Math.floor(Math.random()*quote.length)];
     
@@ -40,30 +41,17 @@
     main.commit(today).tag("now");
   });
 
+  let qitem = $state({"content": "Loading...", "name":"", "who":""});
   let status = $state("waiting");
   let disable = $state(false);
-  let qitem = $state({"content": "Loading...", "name":"", "who":""});
-  // @ts-ignore
-  const handleSubmit = async data => {
-    status = 'sending';
-    disable = true;
-    const formData = new FormData(data.currentTarget)
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-        },
-        body: json
-    });
-    const result = await response.json();
-    if (result.success) {
-        status = "success";
-    }
-  }
+  // // @ts-ignore
+  // const handleSubmit = async data => {
+  //   status = 'sending';
+  //   disable = true;
+  //   const formData = new FormData(data.currentTarget)
+  //   const formDataObject = Object.fromEntries(formData);
+  // }
 </script>
 
 <style>
@@ -192,11 +180,23 @@
 
 <section class="max-w-[600px] p-8 mt-8 mx-auto flex flex-col justify-center items-center">
   <h2 class="mb-8 text-4xl font-extrabold leading-none tracking-tight text-gray-900 relative"><p class="relative z-[1]">Contact.</p><div class="absolute h-[10px] inset-x-0 bottom-0 bg-gray-300 opacity-60"></div></h2>
-  <form onsubmit={(event) => {
-      event.preventDefault();
-      handleSubmit(event);
-    }} class="w-full">
-    <input type="hidden" name="access_key" value={PUBLIC_FORM_ACCESS_KEY}>
+  <form
+    method="POST"
+    use:enhance={() => {
+      status = 'sending';
+      disable = true;
+
+      return async ({ result }) => {
+        if (result.type === 'success') {
+          status = 'success';
+        } else if (result.type === 'failure') {
+          status = 'error';
+          disable = false;
+        }
+      };
+    }}
+    class="w-full"
+  >
     <label for="name-icon" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
     <div class="relative">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
@@ -222,15 +222,19 @@
     </div>
     {#if status=="waiting"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 flex">
-      Send
+      送信
     </button>
     {:else if status=="sending"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-gray-400 flex" disabled>
-      Sending...
+      送信中...
     </button>
     {:else if status=="success"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-gray-400 flex" disabled>
-      Sended!
+      送信されました
+    </button>
+    {:else if status=="error"}
+    <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 flex">
+      エラー：再送信
     </button>
     {/if}
   </form>
