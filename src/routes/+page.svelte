@@ -197,16 +197,16 @@
     }}
     class="w-full"
   >
-    <label for="name-icon" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+    <label for="name-icon" class="block mb-2 text-sm font-medium text-gray-900">お名前</label>
     <div class="relative">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
         <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
         </svg>
       </div>
-      <input type="text" id="name-icon" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="Your Name" disabled={disable} required>
+      <input type="text" id="name-icon" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="お名前" disabled={disable} required>
     </div>
-    <label for="email-address-icon" class="block mb-2 mt-6 text-sm font-medium text-gray-900">Your Email</label>
+    <label for="email-address-icon" class="block mb-2 mt-6 text-sm font-medium text-gray-900">メールアドレス</label>
     <div class="relative">
       <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
         <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
@@ -214,12 +214,17 @@
           <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
         </svg>
       </div>
-      <input type="email" id="email-address-icon" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="email@glaesses.net" disabled={disable} required>
+      <input type="email" id="email-address-icon" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" placeholder="メールアドレス" disabled={disable} required>
     </div>
     <div>
-      <label for="message" class="block mb-2 mt-6 text-sm font-medium text-gray-900">Your message</label>
-      <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Your message here..." disabled={disable} required></textarea>
+      <label for="message" class="block mb-2 mt-6 text-sm font-medium text-gray-900">お問い合わせ内容</label>
+      <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="お問い合わせ内容" disabled={disable} required></textarea>
     </div>
+    <label class="block my-2 ml-2 inline-flex items-center cursor-pointer">
+      <input type="checkbox" name="need_reply" value="need" class="sr-only peer" checked>
+      <div class="relative w-11 h-6 bg-gray-300 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+      <span class="ml-2 text-sm font-medium text-gray-900">担当者からの返答が必要</span>
+    </label>
     {#if status=="waiting"}
     <button type="submit" class="mt-4 mx-auto py-2 px-16 text-sm font-bold text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 flex">
       送信

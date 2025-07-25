@@ -17,6 +17,7 @@ export const actions = {
     const name = formData.get('name')?.toString() || '';
     const email = formData.get('email')?.toString() || '';
     const message = formData.get('message')?.toString() || '';
+    const need_reply = (formData.get('need_reply')?.toString() || '') == "need";
 
     try {
       // スプシ更新
@@ -75,18 +76,22 @@ ${name} 様 (\`${email}\`) より
       };
       const token = jwt.sign(payload, lambdaPrivateKey, options);
 
-      await fetch(LAMBDA_URL, {
+      const res = await fetch(LAMBDA_URL, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
-          "address": email,
-          "name": name,
-          "content": message,
-          "inquiry_id": "000001",
-          "inquiry_date": "2025/07/25 10:30:45",
-          "need_reply": "true"
+          "address": encodeURIComponent(email),
+          "name": encodeURIComponent(name),
+          "content": encodeURIComponent(message),
+          "inquiry_id": `${addedRow.rowNumber.toString().padStart(6, '0')}`,
+          "inquiry_date": time,
+          "need_reply": `${need_reply ? "true" : "false"}`
         },
       });
+      if (res.status !== 200) {
+        throw new Error(`Request failed: ${res.status} ${res.statusText}`);
+      }
+
     } catch (error) {
       console.error("フォーム送信エラー:", error);
       return fail(500, { error: true, message: 'サーバーでエラーが発生しました。' });
