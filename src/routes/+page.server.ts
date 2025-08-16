@@ -44,6 +44,7 @@ export const actions = {
         'ステータス': '未対応',
         'お名前': name,
         'メールアドレス': email,
+        '返答必要': need_reply,
         'お問い合わせ内容': message,
       };
 
@@ -55,12 +56,12 @@ export const actions = {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           username: "ContactNotification",
-          content: `**-----------------------------------
-     :loudspeaker: ContactNotification :loudspeaker:
------------------------------------
-**[GlaessesWeb](https://glaesses.net/) の ContactForm から [新しい問い合わせ](https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit#gid=${inquirySheet.sheetId}&range=${addedRow.rowNumber}:${addedRow.rowNumber})が来ています🫡 
+          content: `**-----------------------------------**
+**     :loudspeaker: ContactNotification :loudspeaker:**
+**-----------------------------------**
+[GlaessesWeb](https://glaesses.net/) の ContactForm から [新しい問い合わせ](https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit#gid=${inquirySheet.sheetId}&range=${addedRow.rowNumber}:${addedRow.rowNumber}) が来ています🫡 
 
-${time}
+${time} ${need_reply ? "**【返答必須】**" : "【返答不要】"}
 ${name} 様 (\`${email}\`) より
 >>> ${message}`
         })
