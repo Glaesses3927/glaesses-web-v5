@@ -3,7 +3,7 @@
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
   interface Props {
-    children?: import('svelte').Snippet;
+    children?: import("svelte").Snippet;
   }
 
   let { children }: Props = $props();
