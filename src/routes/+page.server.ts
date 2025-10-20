@@ -9,11 +9,34 @@ import {
   WEBHOOK_URL,
   LAMBDA_URL,
   LAMBDA_PRIVATE_KEY,
+  RECAPTCHA_SECRET_KEY,
 } from '$env/static/private';
 
 export const actions = {
   default: async ({ request }) => {
+    // reCAPTCHA検証
     const formData = await request.formData();
+    const recaptchaResponse = formData.get('recaptcha_response');
+
+    const recaptchaSecret = RECAPTCHA_SECRET_KEY;
+    const recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
+    
+    // URLSearchParamsを使ってapplication/x-www-form-urlencodedで送信
+    const recaptchaParams = new URLSearchParams({
+      secret: recaptchaSecret,
+      response: recaptchaResponse?.toString() || '',
+    });
+    
+    const recaptcha = await fetch(recaptchaUrl, {
+      method: 'POST',
+      body: recaptchaParams,
+    });
+    const recaptchaResult = await recaptcha.json();
+
+    if (!(recaptchaResult.success && recaptchaResult.score >= 0.5)) {
+      return fail(400, { error: true, message: 'Recaptcha認証に失敗しました。', recaptcha: recaptchaResult });
+    }
+
     const name = formData.get('name')?.toString() || '';
     const email = formData.get('email')?.toString() || '';
     const message = formData.get('message')?.toString() || '';
@@ -77,7 +100,7 @@ ${name} 様 (\`${email}\`) より
       };
       const token = jwt.sign(payload, lambdaPrivateKey, options);
 
-      const res = await fetch(LAMBDA_URL, {
+      const res = await fetch(`${LAMBDA_URL}/contact`, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
