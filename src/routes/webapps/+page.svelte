@@ -33,7 +33,7 @@
       </p>
       <p class="text-gray-500 text-xs">Vue, TailwindCSS, Flowbite</p>
       <a
-        href="https://work-holic.glaesses.net/"
+        href="https://workholic.glaesses.net/"
         class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
       >
         TRY IT!
@@ -50,7 +50,24 @@
       </p>
       <p class="text-gray-500 text-xs">Svelte, TailwindCSS, Flowbite</p>
       <a
-        href="https://pass-game.glaesses.net/"
+        href="https://passgame.glaesses.net/"
+        class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+      >
+        TRY IT!
+      </a>
+    </div>
+    <div
+      class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
+    >
+      <h3 class="font-bold">
+        <div class="text-lg">UIvote</div>
+      </h3>
+      <p class="text-gray-800 text-sm">
+        niceなUIやbadなUIを投票するWebサイトです。
+      </p>
+      <p class="text-gray-500 text-xs">Next.js, TailwindCSS</p>
+      <a
+        href="https://uivote.glaesses.net/"
         class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
       >
         TRY IT!
