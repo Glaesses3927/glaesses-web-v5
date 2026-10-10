@@ -5,6 +5,7 @@
   import quote from "$lib/quote.json";
   import github from "$lib/github-mark.png";
   import qiita from "$lib/qiita-icon.png";
+  import webapps from "$lib/webapps.json";
   import { enhance } from "$app/forms";
   import { PUBLIC_RECAPTCHA_SITE_KEY } from "$env/static/public";
 
@@ -214,7 +215,7 @@
           <div class="text-2xl mb-4">WebApps</div>
         </h3>
         <p class="text-sm">
-          現在3つのWebアプリケーションが作成されています。詳しくは右上のボタンから。
+          現在{webapps.length}つのWebアプリケーションが作成されています。詳しくは右上のボタンから。
         </p>
       </div>
     </div>
