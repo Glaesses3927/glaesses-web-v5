@@ -100,7 +100,7 @@ ${name} 様 (\`${email}\`) より
       };
       const token = jwt.sign(payload, lambdaPrivateKey, options);
 
-      const res = await fetch(`${LAMBDA_URL}/contact`, {
+      const res = await fetch(LAMBDA_URL, {
         method: "GET",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -113,7 +113,7 @@ ${name} 様 (\`${email}\`) より
         },
       });
       if (res.status !== 200) {
-        throw new Error(`Request failed: ${res.status} ${res.statusText}`);
+        throw new Error(`Request failed: ${res.status} ${res.statusText} ${await res.text()}`);
       }
 
     } catch (error) {
