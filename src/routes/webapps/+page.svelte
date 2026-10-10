@@ -56,5 +56,22 @@
         TRY IT!
       </a>
     </div>
+    <div
+      class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
+    >
+      <h3 class="font-bold">
+        <div class="text-lg">TaxCheck</div>
+      </h3>
+      <p class="text-gray-800 text-sm">
+        複数のバイト先の課税対象額を合計し、年収の壁までの残りを確認するアプリです。
+      </p>
+      <p class="text-gray-500 text-xs">Next.js, TailwindCSS</p>
+      <a
+        href="https://taxcheck.glaesses.net/"
+        class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+      >
+        TRY IT!
+      </a>
+    </div>
   </div>
 </section>
