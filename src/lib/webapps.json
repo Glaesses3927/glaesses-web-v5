@@ -1,0 +1,27 @@
+[
+  {
+    "name": "WorkHolic",
+    "description": "特定の形式のシフト表から合計勤務時間を計算するアプリです。",
+    "stack": "Vue, TailwindCSS, Flowbite",
+    "url": "https://workholic.glaesses.net/"
+  },
+  {
+    "name": "UIvote",
+    "description": "niceなUIやbadなUIを投票するWebサイトです。",
+    "stack": "Next.js, TailwindCSS",
+    "url": "https://uivote.glaesses.net/"
+  },
+  {
+    "name": "TaxCheck",
+    "description": "複数のバイト先の課税対象額を合計し、年収の壁までの残りを確認するアプリです。",
+    "stack": "Next.js, TailwindCSS",
+    "url": "https://taxcheck.glaesses.net/"
+  },
+  {
+    "name": "NextBus",
+    "description": "リアルタイムでバスの到着時刻を確認できるアプリです。",
+    "note": "※ 利用には認証が必要です。",
+    "stack": "Next.js, TailwindCSS",
+    "url": "https://nextbus.glaesses.net/"
+  }
+]

@@ -1,5 +1,6 @@
 <script>
   import bg from "$lib/image_city.png";
+  import apps from "$lib/webapps.json";
 </script>
 
 <section class="h-40">
@@ -22,56 +23,27 @@
   class="max-w-[900px] p-8 mx-auto flex flex-col justify-center items-center"
 >
   <div class="grid min-[900px]:grid-cols-1 gap-6">
-    <div
-      class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
-    >
-      <h3 class="font-bold">
-        <div class="text-lg">WorkHolic</div>
-      </h3>
-      <p class="text-gray-800 text-sm">
-        特定の形式のシフト表から合計勤務時間を計算するアプリです。
-      </p>
-      <p class="text-gray-500 text-xs">Vue, TailwindCSS, Flowbite</p>
-      <a
-        href="https://workholic.glaesses.net/"
-        class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+    {#each apps as app}
+      <div
+        class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
       >
-        TRY IT!
-      </a>
-    </div>
-    <div
-      class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
-    >
-      <h3 class="font-bold">
-        <div class="text-lg">PassGame</div>
-      </h3>
-      <p class="text-gray-800 text-sm">
-        決められたルールに従ってパスワードを設定するアプリです。neal.funのサブセット版です。
-      </p>
-      <p class="text-gray-500 text-xs">Svelte, TailwindCSS, Flowbite</p>
-      <a
-        href="https://passgame.glaesses.net/"
-        class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-      >
-        TRY IT!
-      </a>
-    </div>
-    <div
-      class="flex flex-col border-2 border-gray-300 rounded-xl p-6 bg-white shadow"
-    >
-      <h3 class="font-bold">
-        <div class="text-lg">UIvote</div>
-      </h3>
-      <p class="text-gray-800 text-sm">
-        niceなUIやbadなUIを投票するWebサイトです。
-      </p>
-      <p class="text-gray-500 text-xs">Next.js, TailwindCSS</p>
-      <a
-        href="https://uivote.glaesses.net/"
-        class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
-      >
-        TRY IT!
-      </a>
-    </div>
+        <h3 class="font-bold">
+          <div class="text-lg">{app.name}</div>
+        </h3>
+        <p class="text-gray-800 text-sm">
+          {app.description}
+        </p>
+        {#if app.note}
+          <p class="text-red-600 text-xs">{app.note}</p>
+        {/if}
+        <p class="text-gray-500 text-xs">{app.stack}</p>
+        <a
+          href={app.url}
+          class="flex items-center justify-center px-5 py-2 mx-4 mt-4 text-center font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+        >
+          TRY IT!
+        </a>
+      </div>
+    {/each}
   </div>
 </section>
