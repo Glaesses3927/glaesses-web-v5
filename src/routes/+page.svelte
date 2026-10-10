@@ -84,20 +84,21 @@
       class="absolute top-0 left-0 w-screen h-screen bg-[rgb(0,0,0,0.5)]"
     ></div>
   </div>
-  <div class="relative pt-80 pl-4 min-[1400px]:pl-20 text-white">
+  <div class="relative pt-80 px-4 min-[1400px]:px-20 text-white">
     <h2
-      class="font-bold leading-normal text-4xl min-[1400px]:text-[4rem] mb-16"
+      class="font-bold leading-normal text-3xl min-[400px]:text-4xl min-[1400px]:text-[4rem] mb-16 sm:flex"
     >
-      <p class="sm:inline-block align-top">Hi!👋</p>
-      <p class="inline-block">I</p>
-      <p
-        class="texts inline-block align-top w-[300px] min-[1400px]:w-[500px] h-[6rem] overflow-y-hidden"
-      >
-        <span>am a student.</span>
-        <span>like coding.</span>
-        <span>hate studying.</span>
-        <span>like webdesign.</span>
-      </p>
+      <p class="shrink-0 sm:mr-[0.3em]">Hi!👋</p>
+      <div class="flex flex-1 min-w-0">
+        <p class="shrink-0 mr-[0.3em]">I</p>
+        <!-- 2行分の高さを確保し，長い文は折り返して表示する -->
+        <p class="texts flex-1 min-w-0 h-[3em]">
+          <span>build for the web.</span>
+          <span>care about how things feel.</span>
+          <span>explore beyond the screen.</span>
+          <span>turn ideas into experiences.</span>
+        </p>
+      </div>
     </h2>
     <p class="mb-6 text-lg sm:text-xl">This is Website of Glaesses.</p>
   </div>
@@ -435,33 +436,39 @@
 </section>
 
 <style>
-  .texts span {
+  /* 文を同じ位置に重ね，順番にフェードしながら切り替える */
+  .texts {
     position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    animation: shifttext 10s linear infinite;
+  }
+  .texts span {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: shifttext 10s ease-in-out infinite;
+  }
+  .texts span:nth-child(2) {
+    animation-delay: 2.5s;
+  }
+  .texts span:nth-child(3) {
+    animation-delay: 5s;
+  }
+  .texts span:nth-child(4) {
+    animation-delay: 7.5s;
   }
   @keyframes shifttext {
     0% {
       opacity: 0;
+      transform: translateY(0.3em);
     }
-    1%,
-    25% {
+    3%,
+    22% {
       opacity: 1;
-      top: 0;
+      transform: translateY(0);
     }
-    26%,
-    50% {
-      top: -6rem;
-    }
-    51%,
-    75% {
-      top: -12rem;
-    }
-    76%,
+    25%,
     100% {
-      top: -18rem;
+      opacity: 0;
+      transform: translateY(-0.3em);
     }
   }
   #graph-container {
