@@ -7,7 +7,7 @@
   },
   {
     "name": "UIvote",
-    "description": "ナイス/バッドなUIコンポーネントに投票するギャラリーです。",
+    "description": "niceなUIやbadなUIを投票するWebサイトです。",
     "stack": "Next.js, TailwindCSS",
     "url": "https://uivote.glaesses.net/"
   },
